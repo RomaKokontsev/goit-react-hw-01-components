@@ -1,13 +1,14 @@
 import PropTypes from "prop-types";
 import styles from "./FriendList.module.css";
 import { RiEmotionLine, RiEyeOffLine } from "react-icons/ri";
+import defaultImg from "../Profile/default-user.png";
 
 const FriendList = ({ friends }) => {
   return (
     <>
       <h2 className={styles.friends}>Friends</h2>
       <ul className={styles.friendList}>
-        {friends.map(({ avatar, name, isOnline, id }) => (
+        {friends.map(({ avatar = defaultImg, name, isOnline, id }) => (
           <li key={id} className={styles.item}>
             <span className={styles.status}>
               {isOnline ? (
