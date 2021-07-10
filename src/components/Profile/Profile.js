@@ -10,7 +10,7 @@ const User = ({ avatar = defaultImg, name, tag, location, stats }) => {
           src={avatar}
           alt="Аватар пользователя"
           className={styles.avatar}
-          width="100"
+          width="150"
         />
         <p className={styles.name}>{name}</p>
         <p className={styles.tag}>@{tag}</p>
@@ -36,11 +36,11 @@ const User = ({ avatar = defaultImg, name, tag, location, stats }) => {
 };
 
 User.propTypes = {
-  avatar: PropTypes.string,
+  avatar: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  stats: PropTypes.objectOf(PropTypes.number),
+  stats: PropTypes.objectOf(PropTypes.number.isRequired),
 };
 
 export default User;
