@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import styles from "./Statistic.module.css";
+import randomBgColor from "./randomBgColor";
 
 const Statistic = ({ title = "", stats }) => {
   return (
@@ -21,12 +22,6 @@ const Statistic = ({ title = "", stats }) => {
     </section>
   );
 };
-
-function randomBgColor() {
-  return `rgb(${Math.floor(Math.random() * (255 - 0) + 0)},
-    ${Math.floor(Math.random() * (255 - 0) + 0)},
-   ${Math.floor(Math.random() * (255 - 0) + 0)})`;
-}
 
 Statistic.propTypes = {
   title: PropTypes.string.isRequired,

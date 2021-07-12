@@ -4,7 +4,7 @@ import { Fragment } from "react";
 
 const TransactionHistory = ({ items }) => {
   return (
-    <Fragment>
+    <>
       <h2 className={styles.transaction}>Transactions</h2>
       <table className={styles.transactionHistory}>
         <thead>
@@ -24,19 +24,13 @@ const TransactionHistory = ({ items }) => {
           ))}
         </tbody>
       </table>
-    </Fragment>
+    </>
   );
 };
 
 TransactionHistory.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      type: PropTypes.string.isRequired,
-      amount: PropTypes.string.isRequired,
-      currency: PropTypes.string.isRequired,
-    })
-  ),
+  items: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string).isRequired)
+    .isRequired,
 };
 
 export default TransactionHistory;
